@@ -7,6 +7,10 @@ from datetime import datetime
 import json
 import pandas as pd
 
+local_x = []
+local_y = []
+local_name = []
+
 def insert_item_one(mongo, data, db_name=None, collection_name=None):
     result = mongo[db_name][collection_name].insert_one(data).inserted_id
     return result
@@ -17,29 +21,28 @@ def insert_item_many(mongo, datas, db_name=None, collection_name=None):
     return result
     # insert_item_many(mongo, [{"name":"dogyu", "content":"nothing" }, {"name":"min", "content":"true"}], "alarm", "test")
 
-def update_local(): ## 완성 -> 엑셀에 있는 지역, 도시, x, y좌표를 db에 입력
-    count = 0
-    Location = '/home/ec2-user/db/'
-    File = 'weather_local_xy.xlsx'
-    data_pd = pd.read_excel('{}/{}'.format(Location, File),
-                            header=None, index_col=None, names=None)
-    try:
-        for row in data_pd.loc():
-            param = []
-            for item in row:
-                param.append(item)
-            cursor.execute("INSERT INTO local(area, city, x, y) VALUES ('"+param[0]+"', '"+param[1]+
-            "', '"+str(param[2])+"', '"+str(param[3])+"') ON DUPLICATE KEY UPDATE x='"+str(param[2])+"', y='"+
-            str(param[3])+"';")
-            db.commit()
-            count +=1
-            if count == 25:
-                break
-        print("local update")
-    except:
-        print("local update error")
+def update_item_one(mongo, condition=None, update_value=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].update_one(filter=condition, update=update_value, upsert=True)
+    return result
+    # update_item_one(mongo, {"text": "hello"}, {"$set": {"text":"bye"}}, "alarm", "test")
 
-def set_date(): # 날짜를 api에 맞게 설정해줌
+def update_item_many(mongo, condition=None, update_value=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].update_many(filter=condition, update=update_value, upsert=True)
+    return result
+
+def find_item(mongo, condition=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+    return result
+
+def find_item_one(mongo, condition=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].find(condition, {"_id":False})
+    return result
+
+def delete_item_one(mongo, condition=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].delete_one(condition)
+    return result
+
+def set_date_for_api(): # 날짜를 api에 맞게 설정해줌
     global today_time, today_date
     now = datetime.now()
     today_time = int(str(now.hour)+str(now.minute))
@@ -94,7 +97,7 @@ def get_data():     # 기상청에 API를 요청하여 데이터를 받음
     item_data = data['response']['body']['items']['item']
     return item_data
 
-def send_data(local):   # local에 해당하는 기상정보를 db에 넣음
+def update_weather_to_db(local):   # local에 해당하는 기상정보를 db에 넣음
     count = 0
     weather_data = dict() 
     item_data = get_data()
@@ -111,31 +114,40 @@ def send_data(local):   # local에 해당하는 기상정보를 db에 넣음
             weather_code = item['fcstValue']
             count += 1
             if weather_code == '1':
-                weather_state = 'sunny'
+                weather_state = '맑음'
             elif weather_code == '3':
-                weather_state = 'cloudy'
+                weather_state = '구름낌'
             elif weather_code == '4':
-                weather_state = 'gray'
+                weather_state = '흐림'
             else:
-                weather_state = 'none'
+                weather_state = '평범함'
             weather_data['하늘'] = weather_state
         if count == 3:
-            cursor.execute("INSERT INTO seoul(local, date, tmp, rain, sky) VALUES ('"+weather_data['지역']+"', '" +
-                        weather_data['타임']+"', '" + weather_data['기온']+"', '"+weather_data['강수확률']+"', '"+
-                        weather_data['하늘']+"') ON DUPLICATE KEY UPDATE tmp='" +weather_data['기온'] + "'," + 
-                        "rain='" + weather_data['강수확률']+"'," + "sky='" + weather_data['하늘']+"';")
-            db.commit()
+            update_item_one(mongo, {"local":weather_data['지역'], "date":weather_data['타임']}, {"$set":{"tmp":str(weather_data['기온']), "rain":str(weather_data['강수확률']), "sky":weather_data['하늘']}}, "alarm", "weather")
             count = 0
     print(local + "data sended")
 
-def update_item_one(mongo, condition=None, update_value=None, db_name=None, collection_name=None):
-    result = mongo[db_name][collection_name].update_one(filter=condition, update=update_value, upsert=True)
-    return result
-    # update_item_one(mongo, {"text": "hello"}, {"$set": {"text":"bye"}}, "alarm", "test")
-
-def update_item_many(mongo, condition=None, update_value=None, db_name=None, collection_name=None):
-    result = mongo[db_name][collection_name].update_many(filter=condition, update=update_value, upsert=True)
-    return result
+def update_local(): ## 완성 -> 엑셀에 있는 지역, 도시, x, y좌표를 db에 입력
+    count = 0
+    Location = '/home/ec2-user/db/'
+    File = 'weather_local_xy.xlsx'
+    data_pd = pd.read_excel('{}/{}'.format(Location, File),
+                            header=None, index_col=None, names=None)
+    try:
+        for row in data_pd.loc():
+            param = []
+            for item in row:
+                param.append(item)
+            cursor.execute("INSERT INTO local(area, city, x, y) VALUES ('"+param[0]+"', '"+param[1]+
+            "', '"+str(param[2])+"', '"+str(param[3])+"') ON DUPLICATE KEY UPDATE x='"+str(param[2])+"', y='"+
+            str(param[3])+"';")
+            db.commit()
+            count +=1
+            if count == 26:
+                break
+        print("local update")
+    except:
+        print("local update error")
 
 def update_local_to_db():
     count = 0
@@ -143,30 +155,35 @@ def update_local_to_db():
     File = 'weather_local_xy.xlsx'
     data_pd = pd.read_excel('{}/{}'.format(Location, File),
                             header=None, index_col=None, names=None)
-    for row in data_pd.loc():
-        param = []
-        for item in row:
-            param.append(item)
-        print(param)
-        update_item_one(mongo, {"local":param[0], "city":param[1]}, {"$set": {"x":str(param[2]), "y":str(param[3])}}, "alarm", "local")
-        count += 1
-        if count == 25:
-            break
+    try:
+        for row in data_pd.loc():
+            param = []
+            for item in row:
+                param.append(item)
+            update_item_one(mongo, {"local":param[0], "city":param[1]}, {"$set": {"x":str(param[2]), "y":str(param[3])}}, "alarm", "local")
+            count += 1
+            if count == 25:
+                break
         print("update_local_to_db Success")
-    # except:
-    #     print("update_local_to_db Fail")
+    except:
+        print("update_local_to_db Fail")
 
-def delete_item_one(mongo, condition=None, db_name=None, collection_name=None):
-    result = mongo[db_name][collection_name].delete_one(condition)
-    return result
+def find_local_from_db():
+    cursor = find_item(mongo, None, "alarm", "local")
+    for list in cursor:
+       local_name.append(list["city"])
+       local_x.append(list["x"])
+       local_y.append(list["y"])
+    return local_name, local_x, local_y
 
 if __name__ == '__main__':
     host = "172.17.0.3"
     port = "27017"
     mongo = MongoClient(host, int(port))
     print(mongo)
-    # delete_item_one(mongo, {"local": "서울특별시"}, "alarm", "local")
-    # update_local_to_db()
-    # insert_item_one(mongo, {"local":"관악구" }, "alarm", "local")
-    # update_item_one(mongo, {"local": area}, {"$set": {"local": area1}}, "alarm", "local")
-    # insert_item_many(mongo, [{"name":"dogyu", "content":"nothing" }, {"name":"min", "content":"true"}], "alarm", "test")
+    update_local_to_db()
+    set_date_for_api()
+    local, x, y = find_local_from_db()
+    for name in local:
+        update_weather_to_db(name)
+    
