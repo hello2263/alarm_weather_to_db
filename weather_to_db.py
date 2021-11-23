@@ -10,10 +10,12 @@ import pandas as pd
 def insert_item_one(mongo, data, db_name=None, collection_name=None):
     result = mongo[db_name][collection_name].insert_one(data).inserted_id
     return result
+    # insert_item_one(mongo, {"name":"dogyu" }, "alarm", "test")
 
 def insert_item_many(mongo, datas, db_name=None, collection_name=None):
     result = mongo[db_name][collection_name].insert_many(datas).inserted_ids
     return result
+    # insert_item_many(mongo, [{"name":"dogyu", "content":"nothing" }, {"name":"min", "content":"true"}], "alarm", "test")
 
 def update_local(): ## 완성 -> 엑셀에 있는 지역, 도시, x, y좌표를 db에 입력
     count = 0
@@ -126,10 +128,45 @@ def send_data(local):   # local에 해당하는 기상정보를 db에 넣음
             count = 0
     print(local + "data sended")
 
+def update_item_one(mongo, condition=None, update_value=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].update_one(filter=condition, update=update_value, upsert=True)
+    return result
+    # update_item_one(mongo, {"text": "hello"}, {"$set": {"text":"bye"}}, "alarm", "test")
+
+def update_item_many(mongo, condition=None, update_value=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].update_many(filter=condition, update=update_value, upsert=True)
+    return result
+
+def update_local_to_db():
+    count = 0
+    Location = '/home/ec2-user/weather_to_db/'
+    File = 'weather_local_xy.xlsx'
+    data_pd = pd.read_excel('{}/{}'.format(Location, File),
+                            header=None, index_col=None, names=None)
+    for row in data_pd.loc():
+        param = []
+        for item in row:
+            param.append(item)
+        print(param)
+        update_item_one(mongo, {"local":param[0], "city":param[1]}, {"$set": {"x":str(param[2]), "y":str(param[3])}}, "alarm", "local")
+        count += 1
+        if count == 25:
+            break
+        print("update_local_to_db Success")
+    # except:
+    #     print("update_local_to_db Fail")
+
+def delete_item_one(mongo, condition=None, db_name=None, collection_name=None):
+    result = mongo[db_name][collection_name].delete_one(condition)
+    return result
+
 if __name__ == '__main__':
     host = "172.17.0.3"
     port = "27017"
     mongo = MongoClient(host, int(port))
     print(mongo)
-    insert_item_one(mongo, {"name":"dogyu" }, "alarm", "test")
-    insert_item_many(mongo, [{"name":"dogyu", "content":"nothing" }, {"name":"min", "content":"true"}], "alarm", "test")
+    # delete_item_one(mongo, {"local": "서울특별시"}, "alarm", "local")
+    # update_local_to_db()
+    # insert_item_one(mongo, {"local":"관악구" }, "alarm", "local")
+    # update_item_one(mongo, {"local": area}, {"$set": {"local": area1}}, "alarm", "local")
+    # insert_item_many(mongo, [{"name":"dogyu", "content":"nothing" }, {"name":"min", "content":"true"}], "alarm", "test")
