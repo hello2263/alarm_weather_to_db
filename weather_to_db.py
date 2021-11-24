@@ -43,7 +43,7 @@ def delete_item_one(mongo, condition=None, db_name=None, collection_name=None):
     return result
 
 def set_date_for_api(): # 날짜를 api에 맞게 설정해줌
-    global today_time, today_date
+    global today_time, today_date, now
     now = datetime.now()
     today_time = int(str(now.hour)+str(now.minute))
     today_day = now.day
@@ -186,4 +186,5 @@ if __name__ == '__main__':
     local, x, y = find_local_from_db()
     for name in local:
         update_weather_to_db(name)
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
     

@@ -1,0 +1,479 @@
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 96, in get_data
+    data = json.loads(response_body)    # JSON으로 변환
+  File "/usr/lib64/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 188, in <module>
+    update_weather_to_db(name)
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 103, in update_weather_to_db
+    item_data = get_data()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 97, in get_data
+    item_data = data['response']['body']['items']['item']
+KeyError: 'body'
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
