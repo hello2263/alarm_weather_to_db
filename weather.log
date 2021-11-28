@@ -477,3 +477,1333 @@ update_local_to_db Success
 종로구data sended
 중구data sended
 중랑구data sended
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 24일 7시 0분
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e1b33e1be5bfcb9052779, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e29447bf6305940b19fb3, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e37536331434f7d6ad6d7, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e4562546da328fb4e0e7e, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e537389a87361fff98660, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e618336be000a5d6982d9, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e6f9191dd1bb89efdcad4, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e7da3b90473880e1fac24, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e8bb222709c899564568e, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619e99c1cb8ea7be2181be65, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619ea7d27ff4660b6000a435, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619eb5e35b92eb6eb523ff55, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619ec3f23404cd4bb1118bb6, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619ed2021b430db0d3dbd932, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619ee013627dd48d602cbd83, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619eee249c4d33dad1bf02b9, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619efc335976061499254de0, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619f0a4184e01992c718be42, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619f18538fa637934074d586, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 619f266346b22bb87aff452f, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.3:27017: [Errno 113] No route to host')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.3:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: timed out, Timeout: 30s, Topology Description: <TopologyDescription id: 61a03196fa333d08765e2777, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('172.17.0.3:27017: timed out')>]>
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 186, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 172, in find_local_from_db
+    cursor = find_item(mongo, None, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 34, in find_item
+    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1533, in find
+    return Cursor(self, *args, **kwargs)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 233, in __init__
+    if self.__collection.database.client.is_mongos:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1096, in is_mongos
+    return self._server_property('server_type') == SERVER_TYPE.Mongos
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 890, in _server_property
+    writable_server_selector)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 246, in select_server
+    address))
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 203, in select_servers
+    selector, server_timeout, address)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.3:27017: timed out, Timeout: 30s, Topology Description: <TopologyDescription id: 61a03196a2a071acbf2e7817, topology_type: Single, servers: [<ServerDescription ('172.17.0.3', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('172.17.0.3:27017: timed out')>]>
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 26일 2시 0분
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 26일 2시 0분
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 26일 3시 0분
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 26일 3시 0분
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 26일 4시 0분
+/usr/local/lib64/python3.7/site-packages/pymongo/collection.py:1533: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 26일 4시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 184, in <module>
+    update_local_to_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 163, in update_local_to_db
+    update_item_one(mongo, {"local":param[0], "city":param[1]}, {"$set": {"x":str(param[2]), "y":str(param[3])}}, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 25, in update_item_one
+    result = mongo[db_name][collection_name].update_one(filter=condition, update=update_value, upsert=True)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1033, in update_one
+    hint=hint, session=session),
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 879, in _update_retryable
+    _update, session)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/lib64/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1948, in _tmp_session
+    s = self._ensure_session(session)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.2:27017: timed out, Timeout: 30s, Topology Description: <TopologyDescription id: 61a2c68451afb67cb392a827, topology_type: Single, servers: [<ServerDescription ('172.17.0.2', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('172.17.0.2:27017: timed out')>]>
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 184, in <module>
+    update_local_to_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 163, in update_local_to_db
+    update_item_one(mongo, {"local":param[0], "city":param[1]}, {"$set": {"x":str(param[2]), "y":str(param[3])}}, "alarm", "local")
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 25, in update_item_one
+    result = mongo[db_name][collection_name].update_one(filter=condition, update=update_value, upsert=True)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 1033, in update_one
+    hint=hint, session=session),
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/collection.py", line 879, in _update_retryable
+    _update, session)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/lib64/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1948, in _tmp_session
+    s = self._ensure_session(session)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.2:27017: timed out, Timeout: 30s, Topology Description: <TopologyDescription id: 61a2c684edc111847c155f23, topology_type: Single, servers: [<ServerDescription ('172.17.0.2', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('172.17.0.2:27017: timed out')>]>
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 1시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 1시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 11시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 11시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 12시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 12시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 13시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 13시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 14시 0분
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+1
+2
+3
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 14시 0분
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 162, in <module>
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+NameError: name 'now' is not defined
+start------------
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+start------------
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 166, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 152, in find_local_from_db
+    for list in cursor:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 1238, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 1130, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.2:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 61a36133615becfa8078b96e, topology_type: Single, servers: [<ServerDescription ('172.17.0.2', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.2:27017: [Errno 111] Connection refused')>]>
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 166, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 152, in find_local_from_db
+    for list in cursor:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 1238, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 1130, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.2:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 61a361333b3c541fbd0cefde, topology_type: Single, servers: [<ServerDescription ('172.17.0.2', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.2:27017: [Errno 111] Connection refused')>]>
+start------------
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+2021년 11월 28일 20시 15분
+finish------------
+start------------
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Success
+2021년 11월 28일 20시 17분
+강남구data sended
+강동구data sended
+강북구data sended
+강서구data sended
+관악구data sended
+광진구data sended
+구로구data sended
+금천구data sended
+노원구data sended
+도봉구data sended
+동대문구data sended
+동작구data sended
+마포구data sended
+서대문구data sended
+서초구data sended
+성동구data sended
+성북구data sended
+송파구data sended
+양천구data sended
+영등포구data sended
+용산구data sended
+은평구data sended
+종로구data sended
+중구data sended
+중랑구data sended
+finish------------
+start------------
+MongoClient(host=['172.17.0.2:27017'], document_class=dict, tz_aware=False, connect=True)
+update_local_to_db Fail
+2021년 11월 28일 21시 0분
+Traceback (most recent call last):
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 167, in <module>
+    local, x, y = find_local_from_db()
+  File "/home/ec2-user/weather_to_db/weather_to_db.py", line 152, in find_local_from_db
+    for item in cursor:
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 1238, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/cursor.py", line 1130, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib64/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: 172.17.0.2:27017: [Errno 113] No route to host, Timeout: 30s, Topology Description: <TopologyDescription id: 61a36f438c225839fc68b5f5, topology_type: Single, servers: [<ServerDescription ('172.17.0.2', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('172.17.0.2:27017: [Errno 113] No route to host')>]>

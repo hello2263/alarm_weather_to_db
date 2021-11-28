@@ -31,7 +31,8 @@ def update_item_many(mongo, condition=None, update_value=None, db_name=None, col
     return result
 
 def find_item(mongo, condition=None, db_name=None, collection_name=None):
-    result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
+    result = mongo[db_name][collection_name].find(condition, {"_id":False})
+    # result = mongo[db_name][collection_name].find(condition, {"_id":False}, no_cursor_timeout=True, cursor_type=CursorType.EXHAUST)
     return result
 
 def find_item_one(mongo, condition=None, db_name=None, collection_name=None):
@@ -127,28 +128,6 @@ def update_weather_to_db(local):   # local에 해당하는 기상정보를 db에
             count = 0
     print(local + "data sended")
 
-def update_local(): ## 완성 -> 엑셀에 있는 지역, 도시, x, y좌표를 db에 입력
-    count = 0
-    Location = '/home/ec2-user/db/'
-    File = 'weather_local_xy.xlsx'
-    data_pd = pd.read_excel('{}/{}'.format(Location, File),
-                            header=None, index_col=None, names=None)
-    try:
-        for row in data_pd.loc():
-            param = []
-            for item in row:
-                param.append(item)
-            cursor.execute("INSERT INTO local(area, city, x, y) VALUES ('"+param[0]+"', '"+param[1]+
-            "', '"+str(param[2])+"', '"+str(param[3])+"') ON DUPLICATE KEY UPDATE x='"+str(param[2])+"', y='"+
-            str(param[3])+"';")
-            db.commit()
-            count +=1
-            if count == 26:
-                break
-        print("local update")
-    except:
-        print("local update error")
-
 def update_local_to_db():
     count = 0
     Location = '/home/ec2-user/weather_to_db/'
@@ -170,21 +149,23 @@ def update_local_to_db():
 
 def find_local_from_db():
     cursor = find_item(mongo, None, "alarm", "local")
-    for list in cursor:
-       local_name.append(list["city"])
-       local_x.append(list["x"])
-       local_y.append(list["y"])
+    for item in cursor:
+       local_name.append(item["city"])
+       local_x.append(item["x"])
+       local_y.append(item["y"])
     return local_name, local_x, local_y
 
 if __name__ == '__main__':
-    host = "172.17.0.3"
+    print("start------------")
+    host = "172.17.0.2"
     port = "27017"
     mongo = MongoClient(host, int(port))
     print(mongo)
     update_local_to_db()
     set_date_for_api()
+    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
     local, x, y = find_local_from_db()
     for name in local:
         update_weather_to_db(name)
-    print(str(now.year)+"년 " + str(now.month)+"월 "+str(now.day)+ "일 " + str(now.hour)+"시 " + str(now.minute)+ "분")
+    print("finish------------")
     
